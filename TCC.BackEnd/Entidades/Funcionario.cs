@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Domain.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Domain
 {
-    public class Funcionario
+    public class Funcionario : Entidade
     {
         public int Cod { get; set; }
         public string Login { get; set; }
@@ -18,5 +19,10 @@ namespace Domain
         public string Cidade { get; set; }
         public string UF { get; set; }
         public int Telefone { get; set; }
+
+        public override void Validate()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

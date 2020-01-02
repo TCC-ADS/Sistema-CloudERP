@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Domain
 {
-    public class Cliente
+    public class Cliente : Entidade
     {
         public int Cod { get; set; }
         public string Nome { get; set; }
@@ -20,5 +20,10 @@ namespace Domain
         public int Telefone { get; set; }
         //Usuario faz 1 ou muitos pedidos
         public ICollection<Pedido> Pedidos { get; set; }
+
+        public override void Validate()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

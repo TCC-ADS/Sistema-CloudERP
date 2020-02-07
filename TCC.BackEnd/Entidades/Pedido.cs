@@ -8,10 +8,10 @@ namespace Domain.Entidades
 {
     public class Pedido : Entidade
     {
-        public int Cod { get; set; }
+        public int Id { get; set; }
         public DateTime DataPedido { get; set; }
-        public int UsuarioCod { get; set; }
-        public int FuncionarioCod { get; set; }
+        public int UsuarioId { get; set; }
+        public int FuncionarioId { get; set; }
         public FormaPagamento FormaPagamento { get; set; }
         public int FormaPagamentoId { get; set; }
 
@@ -22,9 +22,14 @@ namespace Domain.Entidades
         public override void Validate()
         {
             LimparMensagens();
+
             if (!ItensPedido.Any())
                 AdicionarCritica("Pedido não pode ficar sem item de pedido");
-      
+            
+            if (FormaPagamentoId == 0)
+            {
+                AdicionarCritica("Critica - Não foi informado a forma de pagamento");
+            }
         }
     }
 }

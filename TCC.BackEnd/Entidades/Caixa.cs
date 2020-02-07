@@ -2,7 +2,7 @@
 {
     public class Caixa : Entidade
     {
-        public double valor { get; set; }
+        public double Valor { get; set; }
 
         public override void Validate()
         {

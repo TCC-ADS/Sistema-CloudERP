@@ -7,7 +7,7 @@ namespace Domain
 {
     public class Funcionario : Entidade
     {
-        public int Cod { get; set; }
+        public int Id { get; set; }
         public string Login { get; set; }
         public string Senha { get; set; }
         public string Nome { get; set; }

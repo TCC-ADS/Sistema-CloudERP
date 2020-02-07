@@ -6,13 +6,21 @@ namespace Domain.Entidades
 {
     public class ItemPedido : Entidade
     {
-        public int Cod { get; set; }
-        public int ProdutoCod { get; set; }
+        public int Id { get; set; }
+        public int ProdutoId { get; set; }
         public int Qntd { get; set; }
 
         public override void Validate()
         {
-            throw new NotImplementedException();
+            if (ProdutoId == 0)
+            {
+                AdicionarCritica("Não foi identificado qual a referencia do produto");
+            }
+
+            if (Qntd == 0)
+            {
+                AdicionarCritica("Quantidade não foi informada");
+            }
         }
     }
 }
